@@ -53,7 +53,7 @@ const ar: Dict = {
   // QR & Footer
   qr_title: "باركود الدخول الخاص بك",
   save_qr: "حفظ الباركود",
-  section2_title: "عبدالملك | ليان",
+  section2_title: "Abdulmalik | Layan",
   section2_subtitle: "25 . 11 . 2026",
   tiktok: "غيمة",
 };
