@@ -13,7 +13,7 @@ import starSvg from "@/assets/countdown-star.svg";
 import { useLang } from "@/i18n/LanguageContext";
 
 // رابط خرائط جوجل المحدث خارج المكون لتفادي أخطاء الـ JSX
-const LOCATION_MAP_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("قاعة درة النجوم الطائف")}`;
+const LOCATION_MAP_URL = "https://maps.app.goo.gl/hspRLJu1faqbabkw6?g_st=ic";
 
 // مكون السهم الزخرفي المخصص
 const ScrollArrowIcon = () => (
