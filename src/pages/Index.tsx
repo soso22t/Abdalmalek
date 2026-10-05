@@ -27,25 +27,25 @@ const ScrollArrowIcon = () => (
   >
     <path
       d="M8 6C12 11 20 11 24 6"
-      stroke="#F9E9E6"
+      stroke="#E5D7D4"
       strokeWidth="2"
       strokeLinecap="round"
     />
     <path
       d="M8 12C12 17 20 17 24 12"
-      stroke="#F9E9E6"
+      stroke="#E5D7D4"
       strokeWidth="2"
       strokeLinecap="round"
     />
     <path
       d="M16 14V26"
-      stroke="#F9E9E6"
+      stroke="#E5D7D4"
       strokeWidth="2"
       strokeLinecap="round"
     />
     <path
       d="M8 24C12 28 20 28 24 24L16 34L8 24Z"
-      fill="#F9E9E6"
+      fill="#E5D7D4"
     />
   </svg>
 );
@@ -73,7 +73,7 @@ const Index = () => {
     <div
       className="overflow-x-hidden w-full"
       style={{
-        background: "#A77C86",
+        background: "#330512",
         minHeight: "100vh",
       }}
     >
@@ -83,7 +83,7 @@ const Index = () => {
       <div
         className="fixed inset-0 z-0"
         style={{
-          background: "#A77C86",
+          background: "#330512",
           pointerEvents: "none",
         }}
       />
@@ -101,9 +101,9 @@ const Index = () => {
               onClick={toggle}
               className="px-5 h-8 rounded-full text-sm transition-all"
               style={{
-                background: "#A77C86",
-                border: "1px solid #F9E9E6",
-                color: "#F9E9E6",
+                background: "#330512",
+                border: "1px solid #E5D7D4",
+                color: "#E5D7D4",
               }}
             >
               {lang === "ar" ? (
@@ -125,9 +125,10 @@ const Index = () => {
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover animate-videoFade"
                 style={{
-                  background: "#A77C86",
+                  background: "#330512",
                 }}
               />
+
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
@@ -139,7 +140,6 @@ const Index = () => {
                 dir="ltr"
                 className="absolute inset-0 flex items-center justify-center px-5 py-6"
               >
-                {/* تم تعديل translate-y-8 إلى translate-y-16 لتنزيل المحتوى بالكامل لأسفل */}
                 <div className="translate-y-16 scale-60">
                   <div
                     className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4 text-reveal"
@@ -147,32 +147,55 @@ const Index = () => {
                       background: "transparent",
                       backdropFilter: "none",
                       WebkitBackdropFilter: "none",
-                      color: "#F9E9E6",
+                      color: "#E5D7D4",
                       textShadow:
                         "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
                     }}
                   >
                     <div className="translate-y-3 flex flex-col items-center w-full">
                       {/* الأسطر العلويّة */}
-                      <div className="flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
+                      <div
+                        className="flex flex-col items-center gap-1 relative z-10 w-full"
+                        dir={lang === "ar" ? "rtl" : "ltr"}
+                      >
+                        <div
+                          className={`${
+                            lang === "ar" ? "font-neirizi" : "font-amoshref"
+                          } text-sm sm:text-base whitespace-nowrap`}
+                        >
                           {t("invite_to")}
                         </div>
 
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
+                        <div
+                          className={`${
+                            lang === "ar" ? "font-neirizi" : "font-amoshref"
+                          } text-sm sm:text-base whitespace-nowrap`}
+                        >
                           {t("invite_join")}
                         </div>
 
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
+                        <div
+                          className={`${
+                            lang === "ar" ? "font-neirizi" : "font-amoshref"
+                          } text-sm sm:text-base whitespace-nowrap`}
+                        >
                           {t("invite_day")}
                         </div>
 
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
+                        <div
+                          className={`${
+                            lang === "ar" ? "font-neirizi" : "font-amoshref"
+                          } text-sm sm:text-base whitespace-nowrap`}
+                        >
                           {t("invite_with_love")}
                         </div>
 
                         {/* سطر الدعوة */}
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base mt-4 mb-3 whitespace-nowrap`}>
+                        <div
+                          className={`${
+                            lang === "ar" ? "font-neirizi" : "font-amoshref"
+                          } text-sm sm:text-base mt-4 mb-3 whitespace-nowrap`}
+                        >
                           {t("invite_attend")}
                         </div>
                       </div>
@@ -188,7 +211,10 @@ const Index = () => {
                           style={{ lineHeight: 0.85 }}
                           dir={lang === "ar" ? "rtl" : "ltr"}
                         >
-                          <span className="inline-flex items-center">{t("bride_name")}</span>
+                          <span className="inline-flex items-center">
+                            {t("bride_name")}
+                          </span>
+
                           <span
                             className={`${
                               lang === "ar"
@@ -196,25 +222,48 @@ const Index = () => {
                                 : "font-whitney text-xl sm:text-2xl"
                             } opacity-80 px-1 inline-flex items-center self-center`}
                             style={{
-                              transform: lang === "ar" ? "translateY(24px)" : "translateY(0px)",
+                              transform:
+                                lang === "ar"
+                                  ? "translateY(24px)"
+                                  : "translateY(0px)",
                             }}
                           >
                             {t("and")}
                           </span>
-                          <span className="inline-flex items-center">{t("groom_name")}</span>
+
+                          <span className="inline-flex items-center">
+                            {t("groom_name")}
+                          </span>
                         </div>
                       </div>
 
                       {/* التاريخ والسَطر الجديد المضاف تحت التاريخ الحالي */}
-                      <div className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base`}>
+                      <div
+                        className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10 w-full"
+                        dir={lang === "ar" ? "rtl" : "ltr"}
+                      >
+                        <div
+                          className={`${
+                            lang === "ar" ? "font-neirizi" : "font-amoshref"
+                          } text-sm sm:text-base`}
+                        >
                           {t("invite_god_willing")}
                         </div>
-                        <div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} text-sm sm:text-base`}>
+
+                        <div
+                          className={`${
+                            lang === "ar" ? "font-amoshref" : "font-amoshref"
+                          } text-sm sm:text-base`}
+                        >
                           {t("date_line")}
                         </div>
+
                         {/* التاريخ الثاني المضاف */}
-                        <div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} text-sm sm:text-base opacity-90`}>
+                        <div
+                          className={`${
+                            lang === "ar" ? "font-amoshref" : "font-amoshref"
+                          } text-sm sm:text-base opacity-90`}
+                        >
                           {t("date_line_hijri" as any)}
                         </div>
                       </div>
@@ -237,15 +286,19 @@ const Index = () => {
           <section className="px-4 py-16">
             <Reveal>
               <h2
-                className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-center text-3xl mb-2`}
-                style={{ color: "#EFE6DE" }}
+                className={`${
+                  lang === "ar" ? "font-neirizi" : "font-whitney"
+                } text-center text-3xl mb-2`}
+                style={{ color: "#E5D7D4" }}
               >
                 {t("countdown_title")}
               </h2>
 
               <p
-                className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-center text-sm mb-10`}
-                style={{ color: "#EFE6DE" }}
+                className={`${
+                  lang === "ar" ? "font-neirizi" : "font-amoshref"
+                } text-center text-sm mb-10`}
+                style={{ color: "#E5D7D4" }}
               >
                 {t("countdown_date")}
               </p>
@@ -261,15 +314,19 @@ const Index = () => {
             <Reveal>
               <div className="text-center mb-8">
                 <h2
-                  className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-3xl mb-2`}
-                  style={{ color: "#EFE6DE" }}
+                  className={`${
+                    lang === "ar" ? "font-neirizi" : "font-whitney"
+                  } text-3xl mb-2`}
+                  style={{ color: "#E5D7D4" }}
                 >
                   {t("big_word")}
                 </h2>
 
                 <p
-                  className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
-                  style={{ color: "#EFE6DE", opacity: 0.8 }}
+                  className={`${
+                    lang === "ar" ? "font-neirizi" : "font-amoshref"
+                  } text-sm`}
+                  style={{ color: "#E5D7D4", opacity: 0.8 }}
                 >
                   {t("small_word")}
                 </p>
@@ -282,8 +339,8 @@ const Index = () => {
                 className="mx-auto rounded-xl p-4 w-[calc(4*68px+3*12px)]"
                 style={{
                   background: "transparent",
-                  border: "1px solid rgba(249,233,230,0.65)",
-                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+                  border: "1px solid rgba(229,215,212,0.65)",
+                  boxShadow: "0 0 10px rgba(229,215,212,0.08)",
                 }}
               >
                 <Timeline />
@@ -295,8 +352,8 @@ const Index = () => {
               <div
                 className="mx-auto mt-12 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
                 style={{
-                  border: "1px solid rgba(249,233,230,0.65)",
-                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+                  border: "1px solid rgba(229,215,212,0.65)",
+                  boxShadow: "0 0 10px rgba(229,215,212,0.08)",
                 }}
               >
                 <img
@@ -313,8 +370,8 @@ const Index = () => {
                 className="relative mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
                 style={{
                   background: "transparent",
-                  border: "1px solid rgba(249,233,230,0.65)",
-                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+                  border: "1px solid rgba(229,215,212,0.65)",
+                  boxShadow: "0 0 10px rgba(229,215,212,0.08)",
                 }}
                 dir={lang === "ar" ? "rtl" : "ltr"}
               >
@@ -323,11 +380,13 @@ const Index = () => {
                   alt=""
                   className="absolute top-5 right-2 w-5 h-5 pointer-events-none opacity-90"
                 />
+
                 <img
                   src={starSvg}
                   alt=""
                   className="absolute top-16 left-6 w-5 h-5 pointer-events-none opacity-90"
                 />
+
                 <img
                   src={starSvg}
                   alt=""
@@ -335,25 +394,40 @@ const Index = () => {
                 />
 
                 <div className="flex items-center gap-3 mb-5">
-                  <MapPin className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                  <MapPin className="w-5 h-5" style={{ color: "#E5D7D4" }} />
                   <span
-                    className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
-                    style={{ color: "#EFE6DE" }}
+                    className={`${
+                      lang === "ar" ? "font-neirizi" : "font-amoshref"
+                    } text-sm`}
+                    style={{ color: "#E5D7D4" }}
                   >
                     {t("event_location")}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3 mb-5">
-                  <Clock className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
+                  <Clock className="w-5 h-5" style={{ color: "#E5D7D4" }} />
+                  <span
+                    className={`${
+                      lang === "ar" ? "font-neirizi" : "font-amoshref"
+                    } text-sm`}
+                    style={{ color: "#E5D7D4" }}
+                  >
                     {t("arrival_time")}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3 mb-6">
-                  <CalendarDays className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
+                  <CalendarDays
+                    className="w-5 h-5"
+                    style={{ color: "#E5D7D4" }}
+                  />
+                  <span
+                    className={`${
+                      lang === "ar" ? "font-neirizi" : "font-amoshref"
+                    } text-sm`}
+                    style={{ color: "#E5D7D4" }}
+                  >
                     {t("event_date")}
                   </span>
                 </div>
@@ -363,27 +437,42 @@ const Index = () => {
                   style={{
                     width: "90%",
                     height: "1px",
-                    background: "rgba(249,233,230,0.65)",
+                    background: "rgba(229,215,212,0.65)",
                   }}
                 />
 
                 <div className="flex items-center gap-3 mb-5">
-                  <Baby className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
+                  <Baby className="w-5 h-5" style={{ color: "#E5D7D4" }} />
+                  <span
+                    className={`${
+                      lang === "ar" ? "font-neirizi" : "font-amoshref"
+                    } text-sm`}
+                    style={{ color: "#E5D7D4" }}
+                  >
                     {t("no_kids")}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3 mb-5">
-                  <Camera className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
+                  <Camera className="w-5 h-5" style={{ color: "#E5D7D4" }} />
+                  <span
+                    className={`${
+                      lang === "ar" ? "font-neirizi" : "font-amoshref"
+                    } text-sm`}
+                    style={{ color: "#E5D7D4" }}
+                  >
                     {t("no_cameras")}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <QrCode className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
+                  <QrCode className="w-5 h-5" style={{ color: "#E5D7D4" }} />
+                  <span
+                    className={`${
+                      lang === "ar" ? "font-neirizi" : "font-amoshref"
+                    } text-sm`}
+                    style={{ color: "#E5D7D4" }}
+                  >
                     {t("personal_invitation")}
                   </span>
                 </div>
@@ -401,12 +490,12 @@ const Index = () => {
                 } text-sm w-[calc(4*68px+3*12px)] active:scale-95 transition-transform duration-200 cursor-pointer block`}
                 style={{
                   height: "48px",
-                  background: "#F9E9E6",
-                  color: "#B78E99",
+                  background: "#E5D7D4",
+                  color: "#330512",
                   textDecoration: "none",
                 }}
               >
-                <MapPin className="w-5 h-5" style={{ color: "#B78E99" }} />
+                <MapPin className="w-5 h-5" style={{ color: "#330512" }} />
                 <span>{t("location_button")}</span>
               </a>
             </Reveal>
@@ -417,8 +506,8 @@ const Index = () => {
                 className="mx-auto mt-20 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)]"
                 style={{
                   background: "transparent",
-                  border: "1px solid rgba(249,233,230,0.65)",
-                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+                  border: "1px solid rgba(229,215,212,0.65)",
+                  boxShadow: "0 0 10px rgba(229,215,212,0.08)",
                 }}
               >
                 <img src={rImg} alt="" className="w-full h-auto block" />
@@ -429,15 +518,19 @@ const Index = () => {
             <Reveal delay={200}>
               <div className="mt-8 text-center">
                 <h2
-                  className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-xl mb-2 font-medium tracking-widest`}
-                  style={{ color: "#F9E9E6" }}
+                  className={`${
+                    lang === "ar" ? "font-whitney" : "font-whitney"
+                  } text-xl mb-2 font-medium tracking-widest`}
+                  style={{ color: "#E5D7D4" }}
                 >
                   {t("section2_title")}
                 </h2>
 
                 <p
-                  className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-sm`}
-                  style={{ color: "#F9E9E6", opacity: 0.8 }}
+                  className={`${
+                    lang === "ar" ? "font-whitney" : "font-whitney"
+                  } text-sm`}
+                  style={{ color: "#E5D7D4", opacity: 0.8 }}
                 >
                   {t("section2_subtitle")}
                 </p>
@@ -446,27 +539,27 @@ const Index = () => {
           </section>
 
           {/* Footer */}
-<footer className="px-4 py-12 text-center">
-  <Reveal>
-    <a
-      href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 text-sm underline underline-offset-4"
-      style={{ color: "#EFE6DE" }}
-    >
-      <img
-        src={gaim}
-        alt=""
-        className="w-5 h-5"
-        style={{
-          filter: "brightness(0) saturate(100%) invert(95%)"
-        }}
-      />
-      {t("tiktok")}
-    </a>
-  </Reveal>
-</footer>
+          <footer className="px-4 py-12 text-center">
+            <Reveal>
+              <a
+                href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm underline underline-offset-4"
+                style={{ color: "#E5D7D4" }}
+              >
+                <img
+                  src={gaim}
+                  alt=""
+                  className="w-5 h-5"
+                  style={{
+                    filter: "brightness(0) saturate(100%) invert(95%)",
+                  }}
+                />
+                {t("tiktok")}
+              </a>
+            </Reveal>
+          </footer>
         </main>
       )}
     </div>
