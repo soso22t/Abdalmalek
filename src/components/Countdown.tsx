@@ -3,7 +3,7 @@ import countdownStar from "@/assets/countdown-star.svg";
 import countdownDivider from "@/assets/countdown-divider.svg";
 import { useLang } from "@/i18n/LanguageContext";
 
-const TARGET = new Date("2026-08-12T19:30:00+03:00").getTime();
+const TARGET = new Date("2026-11-25T19:30:00+03:00").getTime();
 
 const Countdown = () => {
 const { t: translate, lang } = useLang();
