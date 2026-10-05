@@ -1,9 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-
 export type Lang = "ar" | "en";
-
 type Dict = Record<string, string>;
-
 const ar: Dict = {
   // Invitation
   tap_open: "اضغط لفتح الدعوة",
@@ -12,15 +9,12 @@ const ar: Dict = {
   invite_day: "الذي يُزهر به القلب وتكتمل به الحكاية",
   invite_with_love: " ",
   and: "&",
-  invite_attend:  "نفتح لكم أبواب فرحتنا بدعوتكم لحضور حفل زفاف",
-  bride_name: "منصـــور",
-  groom_name: "حـــلا",
-  invite_god_willing: "وذلك بمشيئة الله ",
-  date_line: "12 . 08 . 2026",
-  // اضف هذا السطر للقاموس العربي:
-date_line_hijri: "١٤٤٨/٠٢/٢٩ هـ",
-
-
+  invite_attend: "نفتح لكم أبواب فرحتنا بدعوتكم لحضور حفل زفاف",
+  bride_name: "عبـــدالملك",
+  groom_name: "ليـــان",
+  invite_god_willing: "وذلك بمشيئة الله",
+  date_line: "25 . 11 . 2026",
+  date_line_hijri: "15 . 06 . 1448 هـ",
   // Countdown
   countdown_date: "حتى نلتقي في يومنا السعيد",
   countdown_title: "العد التنازلي",
@@ -28,25 +22,21 @@ date_line_hijri: "١٤٤٨/٠٢/٢٩ هـ",
   hours: "ساعات",
   minutes: "دقائق",
   seconds: "ثواني",
-
   // Section Headers & Details
   big_word: "التفاصيل",
   small_word: "كل ما تحتاجون معرفته عن يومنا السعيد",
   location_button: "الموقع",
-  event_location: "قاعة لافيورا",
-  event_date: "الأربعاء 12 أغسطس 2026",
+  event_location: "القاعة الكبرى",
+  event_date: "الأربعاء 25 نوفمبر 2026",
   arrival_time: "8:00 مساءً",
   personal_invitation: "الدعوة شخصية",
-
   // Timeline / Program (مفاتيح موحدة للخط الزمني والمشروع)
   reception: "استقبال الضيوف",
   zaffa: "الزفة",
   dinner: "العشاء",
-
   // Restrictions
   no_cameras: "يمنع التصوير",
   no_kids: "يمنع حضور الأطفال منعاً باتاً",
-
   // RSVP
   rsvp_title: "يشرفنا حضوركم",
   rsvp_sub: "نتشرف بحضوركم",
@@ -60,15 +50,13 @@ date_line_hijri: "١٤٤٨/٠٢/٢٩ هـ",
   welcome: "أهلاً وسهلاً",
   thanks_attending: "شكراً لتأكيد حضورك",
   thanks_declined: "نقدّر اعتذارك",
-
   // QR & Footer
   qr_title: "باركود الدخول الخاص بك",
   save_qr: "حفظ الباركود",
-  section2_title: "Mansour | Hala",
-  section2_subtitle: "12 . 08 . 2026",
+  section2_title: "عبدالملك | ليان",
+  section2_subtitle: "25 . 11 . 2026",
   tiktok: "غيمة",
 };
-
 const en: Dict = {
   // Invitation
   tap_open: "Tap to Open Invitation",
@@ -78,11 +66,11 @@ const en: Dict = {
   invite_with_love: "  ",
   and: "&",
   invite_attend: "We warmly invite you to celebrate our wedding",
-  bride_name: "Mohammed",
-  groom_name: "Haneen",
-  invite_god_willing: "God willing, on Wednesday",
-  date_line: "12 . 08 . 2026",
-
+  bride_name: "Abdulmalik",
+  groom_name: "Layan",
+  invite_god_willing: "God willing",
+  date_line: "25 . 11 . 2026",
+  date_line_hijri: "15 . 06 . 1448",
   // Countdown
   countdown_date: "Until Our Special Day",
   countdown_title: "Countdown",
@@ -90,25 +78,21 @@ const en: Dict = {
   hours: "Hours",
   minutes: "Mins",
   seconds: "Secs",
-
   // Section Headers & Details
   big_word: "Details",
   small_word: "Everything you need to know about our day",
   location_button: "Location",
-  event_location: "Durat Al Nujoom Hall",
-  event_date: "Wednesday, Aug 12, 2026",
+  event_location: "Grand Hall",
+  event_date: "Wednesday, Nov 25, 2026",
   arrival_time: "8:00 PM",
   personal_invitation: "Personal Invitation",
-
   // Timeline / Program
   reception: "Reception",
   zaffa: "Grand Entrance",
   dinner: "Dinner",
-
   // Restrictions
   no_cameras: "No Cameras Allowed",
   no_kids: "Adults Only",
-date_line_hijri: "29 . 02 . 1448",
   // RSVP
   rsvp_title: "RSVP",
   rsvp_sub: "We would be honored by your presence",
@@ -122,47 +106,46 @@ date_line_hijri: "29 . 02 . 1448",
   welcome: "Welcome",
   thanks_attending: "Thank you for confirming",
   thanks_declined: "We appreciate your response",
-
   // QR & Footer
   qr_title: "Your Entry QR Code",
   save_qr: "Save QR Code",
-  section2_title: "Mohammed | Haneen ",
-  section2_subtitle: "12 . 08 . 2026",
+  section2_title: "Abdulmalik | Layan",
+  section2_subtitle: "25 . 11 . 2026",
   tiktok: "@shim2t",
 };
-
 const dicts = { ar, en };
-
 interface LangCtx {
   lang: Lang;
   t: (k: keyof typeof ar) => string;
   toggle: () => void;
   dir: "rtl" | "ltr";
 }
-
 const Ctx = createContext<LangCtx | null>(null);
-
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<Lang>(() => {
-    const saved = typeof window !== "undefined" ? localStorage.getItem("lang") : null;
+    const saved =
+      typeof window !== "undefined" ? localStorage.getItem("lang") : null;
     return saved === "en" || saved === "ar" ? saved : "ar";
   });
   const dir = lang === "ar" ? "rtl" : "ltr";
-
   useEffect(() => {
     localStorage.setItem("lang", lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = dir;
   }, [lang, dir]);
-
   const t = (k: keyof typeof ar) => dicts[lang][k] ?? k;
-  const toggle = () => setLang((l) => (l === "ar" ? "en" : "ar"));
-
-  return <Ctx.Provider value={{ lang, t, toggle, dir }}>{children}</Ctx.Provider>;
+  const toggle = () =>
+    setLang((l) => (l === "ar" ? "en" : "ar"));
+  return (
+    <Ctx.Provider value={{ lang, t, toggle, dir }}>
+      {children}
+    </Ctx.Provider>
+  );
 };
-
 export const useLang = () => {
   const c = useContext(Ctx);
-  if (!c) throw new Error("useLang must be inside LanguageProvider");
+  if (!c) {
+    throw new Error("useLang must be inside LanguageProvider");
+  }
   return c;
 };
