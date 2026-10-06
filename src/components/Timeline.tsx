@@ -29,7 +29,7 @@ const Timeline = () => {
   const { t, lang } = useLang();
 
   const events = [
-    { time: "8:00 PM", labelKey: "reception", icon: Users },
+    { time: "7:00 PM", labelKey: "reception", icon: Users },
 
     // الزفة مخفية فقط بدون حذف
     // { time: "11:30 PM", labelKey: "zaffa", icon: Star },
