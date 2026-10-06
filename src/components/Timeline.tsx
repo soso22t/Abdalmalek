@@ -1,6 +1,6 @@
 import React from "react";
 import Reveal from "./Reveal";
-import { Users, Star, UtensilsCrossed, Heart, Sparkles } from "lucide-react";
+import { Users, Star, UtensilsCrossed, Heart, Sparkles, Baby, Camera } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
 const CircleSparkles = () => (
@@ -30,8 +30,24 @@ const Timeline = () => {
 
   const events = [
     { time: "8:00 PM", labelKey: "reception", icon: Users },
-    { time: "11:30 PM", labelKey: "zaffa", icon: Star },
-    { time: "1:00 AM", labelKey: "dinner", icon: UtensilsCrossed },
+
+    // الزفة مخفية فقط بدون حذف
+    // { time: "11:30 PM", labelKey: "zaffa", icon: Star },
+
+    {
+      time: "",
+      labelKey: "no_kids",
+      icon: Baby,
+    },
+
+    // العشاء مخفي فقط بدون حذف
+    // { time: "1:00 AM", labelKey: "dinner", icon: UtensilsCrossed },
+
+    {
+      time: "",
+      labelKey: "no_cameras",
+      icon: Camera,
+    },
   ];
 
   return (
@@ -82,10 +98,25 @@ const Timeline = () => {
                           className="w-1/2 pr-6 flex flex-col items-center justify-center text-center z-10"
                           dir={lang === "ar" ? "rtl" : "ltr"}
                         >
-                          <span className="font-amoshref text-xs opacity-90 font-medium tracking-wide leading-tight" dir="ltr">
-                            {e.time}
-                          </span>
-                          <span className={`text-base sm:text-lg font-semibold leading-tight mt-1 ${lang === "ar" ? "font-neirizi" : "font-amoshref"}`}>
+                          {/* الوقت يظهر للاستقبال فقط */}
+                          {e.time && (
+                            <span
+                              className="font-amoshref text-xs opacity-90 font-medium tracking-wide leading-tight"
+                              dir="ltr"
+                            >
+                              {e.time}
+                            </span>
+                          )}
+
+                          <span
+                            className={`text-base sm:text-lg font-semibold leading-tight ${
+                              e.time ? "mt-1" : ""
+                            } ${
+                              lang === "ar"
+                                ? "font-neirizi"
+                                : "font-amoshref"
+                            }`}
+                          >
                             {t(e.labelKey as any)}
                           </span>
                         </div>
@@ -99,10 +130,25 @@ const Timeline = () => {
                           className="w-1/2 pl-6 flex flex-col items-center justify-center text-center z-10"
                           dir={lang === "ar" ? "rtl" : "ltr"}
                         >
-                          <span className="font-amoshref text-xs opacity-90 font-medium tracking-wide leading-tight" dir="ltr">
-                            {e.time}
-                          </span>
-                          <span className={`text-base sm:text-lg font-semibold leading-tight mt-1 ${lang === "ar" ? "font-neirizi" : "font-amoshref"}`}>
+                          {/* لا يوجد وقت لمنع الأطفال والتصوير */}
+                          {e.time && (
+                            <span
+                              className="font-amoshref text-xs opacity-90 font-medium tracking-wide leading-tight"
+                              dir="ltr"
+                            >
+                              {e.time}
+                            </span>
+                          )}
+
+                          <span
+                            className={`text-base sm:text-lg font-semibold leading-tight ${
+                              e.time ? "mt-1" : ""
+                            } ${
+                              lang === "ar"
+                                ? "font-neirizi"
+                                : "font-amoshref"
+                            }`}
+                          >
                             {t(e.labelKey as any)}
                           </span>
                         </div>
