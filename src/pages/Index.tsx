@@ -205,7 +205,7 @@ const Index = () => {
                         <div
                           className={`${
                             lang === "ar"
-                              ? "font-a text-[2.4rem] sm:text-[3rem] -translate-y-3"
+                              ? "font-SARAhhh1 text-[2.4rem] sm:text-[3rem] -translate-y-3"
                               : "font-whitney text-2xl sm:text-3xl translate-y-7"
                           } tracking-wide leading-none text-center flex items-baseline justify-center gap-3 transition-transform duration-200`}
                           style={{ lineHeight: 0.85 }}
@@ -588,7 +588,7 @@ const Index = () => {
                     filter: "brightness(0) saturate(100%) invert(95%)",
                   }}
                 />
-                {t("tiktok")}
+                غيمة
               </a>
             </Reveal>
           </footer>
