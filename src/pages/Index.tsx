@@ -215,12 +215,13 @@ const Index = () => {
                             {t("bride_name")}
                           </span>
 
+                          {/* إخفاء & فقط بدون حذف */}
                           <span
                             className={`${
                               lang === "ar"
                                 ? "font-sull text-4xl sm:text-5xl"
                                 : "font-whitney text-xl sm:text-2xl"
-                            } opacity-80 px-1 inline-flex items-center self-center`}
+                            } opacity-80 px-1 inline-flex items-center self-center hidden`}
                             style={{
                               transform:
                                 lang === "ar"
@@ -231,7 +232,8 @@ const Index = () => {
                             {t("and")}
                           </span>
 
-                          <span className="inline-flex items-center">
+                          {/* إخفاء اسم العريس فقط بدون حذف */}
+                          <span className="inline-flex items-center hidden">
                             {t("groom_name")}
                           </span>
                         </div>
@@ -375,6 +377,7 @@ const Index = () => {
                 }}
                 dir={lang === "ar" ? "rtl" : "ltr"}
               >
+                {/* النجوم للزينة */}
                 <img
                   src={starSvg}
                   alt=""
@@ -393,6 +396,7 @@ const Index = () => {
                   className="absolute bottom-10 left-12 w-5 h-5 pointer-events-none opacity-90"
                 />
 
+                {/* القاعة */}
                 <div className="flex items-center gap-3 mb-5">
                   <MapPin className="w-5 h-5" style={{ color: "#E5D7D4" }} />
                   <span
@@ -405,18 +409,25 @@ const Index = () => {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-3 mb-5">
-                  <Clock className="w-5 h-5" style={{ color: "#E5D7D4" }} />
-                  <span
-                    className={`${
-                      lang === "ar" ? "font-neirizi" : "font-amoshref"
-                    } text-sm`}
-                    style={{ color: "#E5D7D4" }}
-                  >
-                    {t("arrival_time")}
-                  </span>
+                {/* وقت الحضور - مخفي فقط بدون حذف */}
+                <div className="hidden">
+                  <div className="flex items-center gap-3 mb-5">
+                    <Clock
+                      className="w-5 h-5"
+                      style={{ color: "#E5D7D4" }}
+                    />
+                    <span
+                      className={`${
+                        lang === "ar" ? "font-neirizi" : "font-amoshref"
+                      } text-sm`}
+                      style={{ color: "#E5D7D4" }}
+                    >
+                      {t("arrival_time")}
+                    </span>
+                  </div>
                 </div>
 
+                {/* التاريخ */}
                 <div className="flex items-center gap-3 mb-6">
                   <CalendarDays
                     className="w-5 h-5"
@@ -432,49 +443,70 @@ const Index = () => {
                   </span>
                 </div>
 
-                <div
-                  className="mx-auto mb-6"
-                  style={{
-                    width: "90%",
-                    height: "1px",
-                    background: "rgba(229,215,212,0.65)",
-                  }}
-                />
-
-                <div className="flex items-center gap-3 mb-5">
-                  <Baby className="w-5 h-5" style={{ color: "#E5D7D4" }} />
-                  <span
-                    className={`${
-                      lang === "ar" ? "font-neirizi" : "font-amoshref"
-                    } text-sm`}
-                    style={{ color: "#E5D7D4" }}
-                  >
-                    {t("no_kids")}
-                  </span>
+                {/* الخط الفاصل - مخفي فقط بدون حذف */}
+                <div className="hidden">
+                  <div
+                    className="mx-auto mb-6"
+                    style={{
+                      width: "90%",
+                      height: "1px",
+                      background: "rgba(229,215,212,0.65)",
+                    }}
+                  />
                 </div>
 
-                <div className="flex items-center gap-3 mb-5">
-                  <Camera className="w-5 h-5" style={{ color: "#E5D7D4" }} />
-                  <span
-                    className={`${
-                      lang === "ar" ? "font-neirizi" : "font-amoshref"
-                    } text-sm`}
-                    style={{ color: "#E5D7D4" }}
-                  >
-                    {t("no_cameras")}
-                  </span>
+                {/* يمنع الأطفال - مخفي هنا فقط، سينقل للمربع الأول */}
+                <div className="hidden">
+                  <div className="flex items-center gap-3 mb-5">
+                    <Baby
+                      className="w-5 h-5"
+                      style={{ color: "#E5D7D4" }}
+                    />
+                    <span
+                      className={`${
+                        lang === "ar" ? "font-neirizi" : "font-amoshref"
+                      } text-sm`}
+                      style={{ color: "#E5D7D4" }}
+                    >
+                      {t("no_kids")}
+                    </span>
+                  </div>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <QrCode className="w-5 h-5" style={{ color: "#E5D7D4" }} />
-                  <span
-                    className={`${
-                      lang === "ar" ? "font-neirizi" : "font-amoshref"
-                    } text-sm`}
-                    style={{ color: "#E5D7D4" }}
-                  >
-                    {t("personal_invitation")}
-                  </span>
+                {/* يمنع التصوير - مخفي هنا فقط، سينقل للمربع الأول */}
+                <div className="hidden">
+                  <div className="flex items-center gap-3 mb-5">
+                    <Camera
+                      className="w-5 h-5"
+                      style={{ color: "#E5D7D4" }}
+                    />
+                    <span
+                      className={`${
+                        lang === "ar" ? "font-neirizi" : "font-amoshref"
+                      } text-sm`}
+                      style={{ color: "#E5D7D4" }}
+                    >
+                      {t("no_cameras")}
+                    </span>
+                  </div>
+                </div>
+
+                {/* الدعوة شخصية - مخفية فقط بدون حذف */}
+                <div className="hidden">
+                  <div className="flex items-center gap-3">
+                    <QrCode
+                      className="w-5 h-5"
+                      style={{ color: "#E5D7D4" }}
+                    />
+                    <span
+                      className={`${
+                        lang === "ar" ? "font-neirizi" : "font-amoshref"
+                      } text-sm`}
+                      style={{ color: "#E5D7D4" }}
+                    >
+                      {t("personal_invitation")}
+                    </span>
+                  </div>
                 </div>
               </div>
             </Reveal>
