@@ -205,7 +205,7 @@ const Index = () => {
                         <div
                           className={`${
                             lang === "ar"
-                              ? "font-sarahhh1 text-[2.4rem] sm:text-[3rem] -translate-y-3"
+                              ? "font-sarahhh1 text-[3rem] sm:text-[3.6rem] -translate-y-1"
                               : "font-whitney text-2xl sm:text-3xl translate-y-7"
                           } tracking-wide leading-none text-center flex items-baseline justify-center gap-3 transition-transform duration-200`}
                           style={{ lineHeight: 0.85 }}
@@ -295,15 +295,6 @@ const Index = () => {
               >
                 {t("countdown_title")}
               </h2>
-
-              <p
-                className={`${
-                  lang === "ar" ? "font-neirizi" : "font-amoshref"
-                } text-center text-sm mb-10`}
-                style={{ color: "#E5D7D4" }}
-              >
-                {t("countdown_date")}
-              </p>
             </Reveal>
 
             <Reveal delay={150}>
@@ -323,15 +314,6 @@ const Index = () => {
                 >
                   {t("big_word")}
                 </h2>
-
-                <p
-                  className={`${
-                    lang === "ar" ? "font-neirizi" : "font-amoshref"
-                  } text-sm`}
-                  style={{ color: "#E5D7D4", opacity: 0.8 }}
-                >
-                  {t("small_word")}
-                </p>
               </div>
             </Reveal>
 
