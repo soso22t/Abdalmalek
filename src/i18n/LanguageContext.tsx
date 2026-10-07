@@ -6,7 +6,7 @@ const ar: Dict = {
   // Invitation
   tap_open: "اضغط لفتح الدعوة",
   invite_to: "في ليلةٍ اختارها الله لتكون أجمل الليالي",
-  invite_join: "نجتمع على لحظات الفرح والسرور",
+  invite_join: "نجتمع على لحظات من الفرح والسرور",
   invite_day: "اختارت من العمر موعدََا",
   invite_with_love: " ",
   and: "&",
