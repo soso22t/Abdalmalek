@@ -1,4 +1,4 @@
-Import rImg from "@/assets/r.png";
+import rImg from "@/assets/r.png";
 import { useEffect, useState } from "react";
 import { MapPin, QrCode, Baby, Camera, Clock, CalendarDays } from "lucide-react";
 import invitationImg from "@/assets/Rp.mp4";
