@@ -1,4 +1,4 @@
-import rImg from "@/assets/r.png";
+Import rImg from "@/assets/r.png";
 import { useEffect, useState } from "react";
 import { MapPin, QrCode, Baby, Camera, Clock, CalendarDays } from "lucide-react";
 import invitationImg from "@/assets/Rp.mp4";
@@ -153,9 +153,9 @@ const Index = () => {
                     }}
                   >
                     <div className="translate-y-3 flex flex-col items-center w-full">
-                      {/* الأسطر العلويّة (تمت مباعدة الأسطر الثلاثة الأولى ورفع الكتلة لأعلى) */}
+                      {/* الأسطر العلويّة */}
                       <div
-                        className="flex flex-col items-center gap-2.5 relative z-10 w-full -translate-y-3"
+                        className="flex flex-col items-center gap-1 relative z-10 w-full"
                         dir={lang === "ar" ? "rtl" : "ltr"}
                       >
                         <div
@@ -190,11 +190,11 @@ const Index = () => {
                           {t("invite_with_love")}
                         </div>
 
-                        {/* سطر الدعوة (تم رفعه قليلاً) */}
+                        {/* سطر الدعوة */}
                         <div
                           className={`${
                             lang === "ar" ? "font-neirizi" : "font-amoshref"
-                          } text-sm sm:text-base -mt-1 mb-2 whitespace-nowrap`}
+                          } text-sm sm:text-base mt-4 mb-3 whitespace-nowrap`}
                         >
                           {t("invite_attend")}
                         </div>
