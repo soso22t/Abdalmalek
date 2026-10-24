@@ -153,9 +153,9 @@ const Index = () => {
                     }}
                   >
                     <div className="translate-y-3 flex flex-col items-center w-full">
-                      {/* الأسطر العلويّة */}
+                      {/* الأسطر العلويّة (تمت مباعدة الأسطر الثلاثة الأولى ورفع الكتلة لأعلى) */}
                       <div
-                        className="flex flex-col items-center gap-1 relative z-10 w-full"
+                        className="flex flex-col items-center gap-2.5 relative z-10 w-full -translate-y-3"
                         dir={lang === "ar" ? "rtl" : "ltr"}
                       >
                         <div
@@ -190,11 +190,11 @@ const Index = () => {
                           {t("invite_with_love")}
                         </div>
 
-                        {/* سطر الدعوة */}
+                        {/* سطر الدعوة (تم رفعه قليلاً) */}
                         <div
                           className={`${
                             lang === "ar" ? "font-neirizi" : "font-amoshref"
-                          } text-sm sm:text-base mt-4 mb-3 whitespace-nowrap`}
+                          } text-sm sm:text-base -mt-1 mb-2 whitespace-nowrap`}
                         >
                           {t("invite_attend")}
                         </div>
